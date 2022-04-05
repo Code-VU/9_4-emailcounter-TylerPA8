@@ -1,10 +1,13 @@
 def countEmail():
     # This first line is provided for you
-    name = input("Enter file:")
-    if len(name) < 1 : name = "mbox-short.txt"
-        handle = open(name)
-    else:
-        handle = open(name)
+    try:
+        name = input("Enter file:")
+    except:
+        if len(name) < 1 : 
+            name = "mbox-short.txt"
+            handle = open(name)
+        else:
+            handle = open(name)
     fr = handle.readlines()
     froms ={}
     for n in fr:
